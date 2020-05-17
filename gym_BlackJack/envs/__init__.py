@@ -1,1 +1,1 @@
-from gym_foo.envs.BlackJack_env import BlackJackEnv
+from gym_BlackJack.envs.BlackJack_env import BlackJackEnv
