@@ -113,7 +113,7 @@ class BlackJackEnv(gym.Env):
         return self._get_obs(), reward, done, {}
 
     def _get_obs(self):
-        return (sum_hand(self.player), self.dealer[0], usable_ace(self.player), can_double(self.player))
+        return sum_hand(self.player), self.dealer[0], usable_ace(self.player), can_double(self.player)
 
     def reset(self):
         self.Deck = deck(decks=6)
