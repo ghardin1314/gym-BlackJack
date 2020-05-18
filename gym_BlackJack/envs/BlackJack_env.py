@@ -79,8 +79,6 @@ class BlackJackEnv(gym.Env):
             spaces.Discrete(11),
             # Player has useable ace
             spaces.Discrete(2),
-            # Player can double
-            spaces.Discrete(2),
         ))
         self.natural = natural
 
