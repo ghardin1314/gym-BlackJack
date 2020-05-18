@@ -66,12 +66,12 @@ class BlackJackEnv(gym.Env):
         0 - Stay
         1 - Hit
         2 - Double Down
-        # Furture Implementation
         3 - Surrender
+        # Furture Implementation
         4 - Insurance
         5 - Split
         """
-        self.action_space = spaces.Discrete(3)
+        self.action_space = spaces.Discrete(4)
         self.observation_space = spaces.Tuple((
             # User hand sum
             spaces.Discrete(32),
@@ -103,6 +103,9 @@ class BlackJackEnv(gym.Env):
                 while sum_hand(self.dealer) < 17:
                     self.dealer.append(self.Deck.deal())
                 reward = cmp(score(self.player), score(self.dealer)) * 2
+        elif action == 3:
+            done = True
+            reward = -0.5
         else:
             done = True
             while sum_hand(self.dealer) < 17:
